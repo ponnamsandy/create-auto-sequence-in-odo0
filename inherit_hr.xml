@@ -1,0 +1,35 @@
+<openerp>
+	<data>
+		<record id="view_employee_inherit_view" model="ir.ui.view">
+		    <field name="name">hr.statusbar.form</field>
+		    <field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_form"/>
+			<field name="arch" type="xml">
+		        <xpath expr="//form/sheet" position="before">
+		          <header>
+		          	<button name="probation_employee" string="Send-emp"/>
+		          	<button name="employee_resign" string="Emp-res"/>
+		          	<field name="state" widget="statusbar" statusbar_colors='{"invoice_except":"red","waiting_date":"blue"}'/>
+		          </header>
+		      	</xpath>
+		      	<xpath expr="//form/sheet/notebook/page" position="after">
+		      		<page string="Employee-Id">
+		      			<group>
+		      				<group>
+		      					<field name="employee_id"/>
+		      				</group>
+		      				<group>
+		      					<button name="generate_sequence" type="object" string="EMP-ID"/>
+		      				</group>
+		      			</group>
+		      		</page>
+		      	</xpath>
+		      	
+		      </field>
+		</record>
+
+
+		
+	    
+	</data>
+</openerp>
